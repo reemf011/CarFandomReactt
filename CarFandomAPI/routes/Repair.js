@@ -4,9 +4,10 @@ const RepairController = require('../controllers/Repair');
 
 const RepairRouter = Router();
 
-
-RepairRouter.get('/', RepairController.getRepair);
+RepairRouter.post('/', RepairController.postRepair);
 
 module.exports = RepairRouter;
+/*RepairRouter.get('/', RepairController.getRepair);*/
 
-carRouter.post('/', RepairController.postRepair);
+
+

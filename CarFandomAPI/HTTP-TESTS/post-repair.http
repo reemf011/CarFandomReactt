@@ -1,0 +1,9 @@
+POST http://localhost:5000/Repair
+Content-Type: application/json
+
+{
+    "MName":"Fast Cars",
+    "RDescription":"The Fast Cars repair center has varies of cars for all the classes ",
+    "RLocation":"Street 90, Tagmao Khamees"
+    
+}
