@@ -8,6 +8,8 @@ import SigninPage from './Post/SigninPage';
 import SignupPage from './Post/SignupPage';
 import Layout from './UI/layout/Layout';
 import PostPage from './Post/PostPage';
+import CarPages from './pages/CarPages';
+
 
 const App = () => {
   return (
@@ -25,6 +27,11 @@ const App = () => {
         </Layout>
       </BrowserRouter>
     </AuthProvider>
+  );
+  return (
+    <div>
+      <CarPages/>
+    </div>
   );
 };
 
