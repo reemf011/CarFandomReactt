@@ -14,7 +14,8 @@ module.exports.findAllposts = async () => {
 module.exports.addNewPost = async (PostInfo) => {
     try{
         const Posts = new PostModel({
-        postID: addNewPost.postID,
+        postName: addNewPost.postName,
+        postPrice: addNewPost.postPrice,
         custID: addNewPost.custID,
         carID: addNewPost.carID,
         PublishedDate: addNewPost.PublishedDate

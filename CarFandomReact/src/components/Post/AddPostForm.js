@@ -12,12 +12,12 @@ const AddProductForm = (props) => {
   const authContext = useContext(AuthContext);
 
   const suppliersOptions = props.suppliers.map((s) => {
-    return { name: s.name, value: s._id };
+    return { postName: s.postName, value: s._id };
   });
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:5000/products', {
+      const response = await fetch('http://localhost:5000/Post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -103,4 +103,4 @@ const AddProductForm = (props) => {
   );
 };
 
-export default AddProductForm;
+export default AddPostForm;

@@ -1,7 +1,12 @@
 const {Schema, model} = require('mongoose');
 
 const PostSchema = new Schema({
-    postID:{
+
+    postName:{
+        type:'String',
+        required: true
+    },
+    postPrice:{
         type:'Number',
         required: true
     },

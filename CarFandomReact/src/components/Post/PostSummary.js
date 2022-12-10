@@ -4,7 +4,7 @@ import CardActions from '../../UI/card/CardActions';
 import CardBody from '../../UI/card/CardBody';
 import CardHeader from '../../UI/card/CardHeader';
 
-const ProductSummary = (props) => {
+const PosttSummary = (props) => {
   // use the navigate function provided by the useNavigate react router hook
   const navigate = useNavigate();
 
@@ -17,13 +17,13 @@ const ProductSummary = (props) => {
       <CardHeader>
         <img
           className="object-scale-down h-[300px]"
-          src={props.product.imgURL}
-          alt={props.product.name}
+          src={props.Post.imgURL}
+          alt={props.Post.postName}
         />
       </CardHeader>
       <CardBody>
-        <h3 className="font-bold">{props.product.name}</h3>
-        <h5>{props.product.price} EGP</h5>
+        <h3 className="font-bold">{props.Post.postName}</h3>
+        <h5>{props.Post.postPrice} EGP</h5>
       </CardBody>
       <CardActions>
         <button
@@ -37,4 +37,4 @@ const ProductSummary = (props) => {
   );
 };
 
-export default ProductSummary;
+export default PostSummary;
