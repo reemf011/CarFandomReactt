@@ -5,10 +5,7 @@ const CarSchema = new Schema ({
         required: true
     },
 
-    car_color: {
-        type: 'String',
-        required: true
-    },
+   
 
     car_price: {
         type: 'Number',
