@@ -1,0 +1,7 @@
+GET http://localhost:5000/customer
+Content-Type: application/json
+{
+    "name":"Jana",
+    "phonenumber":011129488281,
+    "Email":"janam@gmail.com"
+}
