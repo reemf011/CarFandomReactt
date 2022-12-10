@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
 
-import AddProductForm from '../components/products/AddProductForm';
+import AddPostForm from '../components/Post/AddPosttForm';
 
 const AddProductPage = () => {
-  const [suppliers, setSuppliers] = useState([]);
+  const [Repair, setRepair] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchAbortController = new AbortController();
     const fetchSignal = fetchAbortController.signal;
 
-    const fetchProducts = async () => {
+    const fetchPost = async () => {
       try {
-        const response = await fetch('http://localhost:5000/suppliers', {
+        const response = await fetch('http://localhost:5000/Repair', {
           signal: fetchSignal
         });
         const data = await response.json();
@@ -21,14 +21,14 @@ const AddProductPage = () => {
           throw Error(data.error);
         }
 
-        setSuppliers(data.suppliers);
+        setSuppliers(data.Repair);
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
       }
     };
 
-    fetchProducts();
+    fetchPost;
 
     return () => {
       fetchAbortController.abort();
@@ -36,14 +36,14 @@ const AddProductPage = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading list of existing suppliers...</p>;
+    return <p>Loading list of existing Repairs...</p>;
   }
 
   return (
     <div>
-      <AddProductForm suppliers={suppliers} />
+      <AddPostForm Repair={Repair} />
     </div>
   );
 };
 
-export default AddProductPage;
+export default AddPostPage;
