@@ -4,12 +4,12 @@ import CardActions from '../../UI/card/CardActions';
 import CardBody from '../../UI/card/CardBody';
 import CardHeader from '../../UI/card/CardHeader';
 
-const PostSummary = (props) => {
+const SuppliersSummary = (props) => {
   // use the navigate function provided by the useNavigate react router hook
   const navigate = useNavigate();
 
   const btnOnClickHandler = () => {
-    navigate(`/Post/${props.Post._id}`);
+    navigate(`/suppliers/${props.s._id}`);
   };
 
   return (

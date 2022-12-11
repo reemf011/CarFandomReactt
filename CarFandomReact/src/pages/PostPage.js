@@ -15,11 +15,7 @@ const PostPage = () => {
     const fetchPost = async () => {
       try {
         // send an HTTP GET request to the get products route we defined in our Express REST API
-<<<<<<< Updated upstream:CarFandomReact/src/pages/ProductsPage.js
-        const response = await fetch('http://localhost:3000/products', {
-=======
         const response = await fetch('http://localhost:3000/Post', {
->>>>>>> Stashed changes:CarFandomReact/src/pages/PostPage.js
           signal: fetchSignal
         });
         // parse the response content to JSON and store it into data variable
@@ -32,7 +28,7 @@ const PostPage = () => {
         }
 
         // we now need to set our component state to the products we fetched
-        setProducts(data.Post);
+        setPost(data.Post);
 
         // after we set the products' state, let's set the loading state to false
         setIsLoading(false);
@@ -41,7 +37,7 @@ const PostPage = () => {
       }
     };
 
-    fetchProducts();
+    fetchPost();
 
     return () => {
       fetchAbortController.abort();
@@ -54,9 +50,9 @@ const PostPage = () => {
 
   return (
     <div className="flex flex-col items-center justify-center">
-      <ProductsList products={products} />
+      <PostList Post={Post} />
     </div>
   );
 };
 
-export default ProductsPage;
+export default PostPage;

@@ -1,22 +1,22 @@
 import {useState} from 'react';
 import {BrowserRouter, Route,Routes} from 'react-router-dom';
-import Repairlist from '../repairs/Repairlist'
-const Repairpage=()=> {
-    const [repair, setrepair]=useState([]);
+import SuppliersList from '../suppliers/SuppliersList'
+const Supplierspage=()=> {
+    const [suppliers, setsuppliers]=useState([]);
     const[isLoading, setIsLoading]= useState(true);
     useEffect (() =>{
         const fetchAbortController= new AbortController();
         const fetchSignal= fetchAbortController.signal();
-        const fetchrepair = async () =>{
+        const fetchsuppliers = async () =>{
         try{
-            const response = await fetch ('http://localhost:3000/Repair',{
+            const response = await fetch ('http://localhost:3000/suppliers',{
                 signal:fetchSignal
             });
             const data = await response.json();
             if(!response.ok){
                 throw Error(data.error);
             }
-            setrepair(data.repair);
+            setsuppliers(data.suppliers);
             setIsLoading(false);
         }catch(err){
             console.log(err.message);
@@ -31,7 +31,7 @@ if(isLoading){
     return <p> Please wait while loading your data</p>;
 }
     return <div className="flex flex-col items-center justify-center">
-        <Repairlist repair={repair}/>
+        <SuppliersList suppliers={suppliers}/>
     </div>
 };
-export default Repairpage;
+export default Supplierspage;
