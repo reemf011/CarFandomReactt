@@ -1,6 +1,7 @@
 
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require ('cors');
 
 const initiateDBConnection = require('./config/db');
 
@@ -30,6 +31,8 @@ app.use('/Post', postRouter);
 app.use('/Feedback', feedbackRouter);
 app.use('/Car', carRouter);
 app.use(express.json());
+app.use (cors());
+
 app.listen(PORT, async () => {
   console.log(`server has been started as is listening to port ${PORT}`);
   await initiateDBConnection();
