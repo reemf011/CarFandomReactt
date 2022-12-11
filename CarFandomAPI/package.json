@@ -1,8 +1,8 @@
 {
-  "name": "carfendomapi",
+  "name": "carfandomapi",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js"
   },
