@@ -4,7 +4,7 @@ import FeedbackList from "../components/feedback/FeedbackList";
 const FeedbackPage = () => {
     
 
-    const [feedback, setFeedback] = useState([]);
+    const [customer, setCustomer] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     
     useEffect (() => {
@@ -16,7 +16,7 @@ const FeedbackPage = () => {
         const fetchFeecback = async () => {
             try {
 
-                const reponse = await fetch ('http://localhost:5000/feedback', {
+                const reponse = await fetch ('http://localhost:5000/customer', {
                     signal: fetchSignal
                 });
 
@@ -26,7 +26,7 @@ const FeedbackPage = () => {
                     throw Error(data.error);
                 }
         
-                setFeedback (data.feedback);
+                setCustomer (data.customer);
 
                 setIsLoading(false);
 
@@ -42,15 +42,15 @@ const FeedbackPage = () => {
         }, []);
 
         if (isLoading) {
-            return <p> please wait while we are loading data... </p>
+            return <p> loading list of existing customers </p>
         }
 
         return (
-            <div className="flex flex-col items-center justify-center">
-                <FeedbackList feedback={feedback}/>
+            <div>
+                <FeedbackList customer={customer}/>
             </div>
         );
-
+/*
         const dummyFeedback = [
             {
                 name: 'Ahmed',
@@ -64,7 +64,7 @@ const FeedbackPage = () => {
             }
         ];
 
-/*
+
 const onButtonClickHandler = async() => {
     try {
         const response = await fetch ('http://localhost:5000/feedback');
