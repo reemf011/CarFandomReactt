@@ -27,10 +27,10 @@ const PostPage = () => {
           throw Error(data.error);
         }
 
-        // we now need to set our component state to the products we fetched
+        // we now need to set our component state to the posts we fetched
         setPost(data.Post);
 
-        // after we set the products' state, let's set the loading state to false
+        // after we set the posts' state, let's set the loading state to false
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
@@ -40,7 +40,7 @@ const PostPage = () => {
     fetchPost();
 
     return () => {
-      fetchAbortController.abort();
+      fetch6AbortController.abort();
     };
   }, []);
 
