@@ -9,5 +9,5 @@ RepairRouter.get('/', RepairController.getRepair);
 
 module.exports = RepairRouter;
 
-carRouter.post('/', RepairController.postRepair);
+RepairRouter.post('/', RepairController.postRepair);
 

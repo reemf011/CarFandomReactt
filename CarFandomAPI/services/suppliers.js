@@ -1,35 +1,24 @@
-const azMapsService = require('../services/azMaps');
-const suppliersService = require('../services/suppliers');
-
-module.exports.postSupplier = async(req,res) => {
-    const supplierInfo ={
-
-    name: req.body.name,
-    email: req.body.email,
-    address: req.body.address,
-    imgURL: req.body.imgURL
-};
-
-try{
-    const supplierCoods = await azMapsService.geocodeAddress(req.body.address);
-    if(!supplierCoods){
-        return res.status(422).send({
-            error: 'Could not find a valid location using the given address'
-        });
+const Suppliermodel=require('../models/suppliers');
+module.exports.findAllSuppliers= async ()=>{
+    try{
+        const suppliers= await Suppliermodel.find();
+        return suppliers;
+    }catch(err){
+        throw new Error('Could not retrieve suppliers');
     }
-    const addedSupplier = await suppliersService.addNewSupplier(
-        supplierInfo,
-        supplierCoods
-    );
-
-    res.status(201).send({
-        msg: 'Supplier added successfully',
-        supplierId: addedSupplier._id
-    });
-}catch(err){
-    res.status(500);
-    res.send({
-        error:err.message
-    });
 }
+module.exports.addNewSupplier = async(Sinfo) =>{
+    try{
+        const supp= new Suppliermodel({
+        
+            name: Sinfo.name,
+            email: Sinfo.email,
+            address: Sinfo.address,
+            imgURL: Sinfo.imgURL
+        });
+        const createdSupplier=await suppliers.save();
+        return createdSupplier;
+    }catch(err){
+        throw new Error('Could not create supplier');
+    }
 };

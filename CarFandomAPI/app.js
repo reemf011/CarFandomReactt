@@ -16,7 +16,8 @@ const feedbackRouter = require ('./routes/Feedback');
 
 const custServiceRouter = require ('./routes/CustomerService');
 const postRouter = require ('./routes/Post');
-
+const RepairRouter = require('./routes/Repair');
+const suppliersRouter = require ('./routes/suppliers');
 
 dotenv.config({
   path: './config/.env'
