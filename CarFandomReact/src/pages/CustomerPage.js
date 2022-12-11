@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {BrowserRouter, Route,Routes} from 'react-router-dom';
 import CustomerProfile from './components/customer/CustomerProfile';
 import CustomerSummary from './components/customer/CustomerSummary';
 
