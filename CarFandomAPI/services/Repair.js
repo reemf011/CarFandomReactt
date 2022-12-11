@@ -13,6 +13,7 @@ module.exports.findAllProducts = async () => {
 module.exports.addNewRepair = async (RepairInfo) => {
     try {
         const repair = new RepairModel ({
+        RId:req.body.RID,
         MName:req.body.MName,
         RDescription:req.body.RDescription,
         RLocation:req.body.RLocation
