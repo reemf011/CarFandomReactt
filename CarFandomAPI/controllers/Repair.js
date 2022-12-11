@@ -1,36 +1,6 @@
-const azMapsService = require('../services/asMaps');
 const Repairservice = require('../services/Repair');
 
-module.exports.postRepair = async (req, res) => {
-    const RepairInfo ={
-    MName: req.body.MName,
-    RDescription: req.body.RDescription,
-    RLocation: req.body.RLocation
-    };
-    try{
-        const RepairCoords = await azMapsService.gepcodeAddress(req.body.RLocation);
-        if(!RepairCoords){
-            return res.status(422).send({
-                error: 'Could not find a valid location using the given address.'
-
-            });
-
-        }
-        const addedRepair = await repairsService.addNewRepair(
-            RepairInfo,
-            RepairInfo
-        );
-        res.status(201).send({
-         msg: 'Repair added successfully.',
-         RepairId: addedRepair._id
-        });
-    }catch(err){
-    res.status(500);
-    res.send({
-        error: err.message
-    });
-    }
-    /*
+module.exports.getRepair = async (req, res) => {
     try {
         const repair = await RepairService.findAllProducts();
         res.send({repair});
@@ -40,7 +10,6 @@ module.exports.postRepair = async (req, res) => {
             error: err
         });
     }
-*/
 };
 
 
@@ -55,7 +24,7 @@ module.exports.postRepair = async (req, res) => {
         const createdRepair = await RepairService.addNewrepair(RepairInfo);
         return res.status(201).send({
             msg: 'Repair mechanics created successfully',
-            RepairId: createdRepair.RepairId
+            RID: createdRepair.RID
         });
     } catch (err) {
         return res.status(500).send({

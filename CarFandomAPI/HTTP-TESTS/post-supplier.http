@@ -1,0 +1,9 @@
+POST http://localhost:5000/suppliers
+Content-Type: application/json
+
+{
+    "name":"Fast Cars",
+    "email":"sales@fastCars.com",
+    "address":"Street 90, Tagmao Khamees",
+    "imgURL":"https://www.google.com/search?q=fast+cars+repair+centers&sxsrf=ALiCzsalky-shMNdWARxtIF0QolpXOyUTw:1670753007972&source=lnms&tbm=isch&sa=X&ved=2ahUKEwipp7D8p_H7AhWWwYUKHR09DHUQ_AUoAnoECAMQBA&biw=747&bih=638&dpr=1.34#imgrc=nH1ZEDp9wg08HM"
+}

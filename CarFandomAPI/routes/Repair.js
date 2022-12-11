@@ -1,13 +1,13 @@
 const {Router} = require('express');
 
-const repairController = require('../controllers/Repair');
+const RepairController = require('../controllers/Repair');
 
-const repairRouter = Router();
-
-repairRouter.get('/', RepairController.postRepair);
-
-module.exports = repairRouter;
-/*RepairRouter.post('/', RepairController.getRepair);*/
+const RepairRouter = Router();
 
 
+RepairRouter.get('/', RepairController.getRepair);
+
+module.exports = RepairRouter;
+
+carRouter.post('/', RepairController.postRepair);
 

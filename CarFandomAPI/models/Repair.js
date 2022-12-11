@@ -1,5 +1,5 @@
-const {Schema, model} = require ('mongoose');
-const RepairSchema = new Schema ({
+const {Schema, model}=require(`mongoose`);
+const RepairSchema= new Schema({
 
     MName:{
      
