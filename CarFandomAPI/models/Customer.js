@@ -19,7 +19,10 @@ const CustomerSchema= new Schema({
         type:'String',
         required: true
     },
-    
+    password:{
+        type: 'String',
+        required:true
+    }
 })
 const CustomerModel = model('Customer',CustomerSchema);
 module.exports=CustomerModel;

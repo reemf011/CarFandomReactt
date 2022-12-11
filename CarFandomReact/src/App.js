@@ -9,7 +9,16 @@ import SignupPage from './Post/SignupPage';
 import Layout from './UI/layout/Layout';
 import PostPage from './Post/PostPage';
 import CarPages from './pages/CarPages';
+<<<<<<< Updated upstream
 import FeedbackPage from './pages/FeedbackPage';
+=======
+import AddFeedbackPage from './pages/AddFeedbackPage';
+import CustomerPage from './pages/CustomerPage';
+import FeedbackPage from './pages/FeedbackPage';
+import ProductsPage from './pages/ProductsPage';
+import ProductPage from './pages/ProductPage';
+import Repairpage from './pages/Repairpage';
+>>>>>>> Stashed changes
 
 
 const App = () => {

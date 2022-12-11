@@ -3,21 +3,21 @@ import AuthContext from './authContext';
 import { useState } from 'react';
 
 const AuthProvider = (props) => {
-  const [username, setUsername] = useState('');
+  const [Email, setEmail] = useState('');
   const [id, setID] = useState('');
   const [token, setToken] = useState('');
 
   const authContext = {
-    username: username,
+    Email:Email,
     id: id,
     token: token,
-    login: (id, username, token) => {
+    login: (id, Email, token) => {
       setID(id);
-      setUsername(username);
+      setEmail(Email);
       setToken(token);
     },
     logout: () => {
-      setUsername('');
+      setEmail('');
       setID('');
       setToken('');
     }
