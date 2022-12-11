@@ -47,5 +47,24 @@ const FeedbackList =(props) => {
           </form>
     );
 
+    const submitHandler = async (formData) => {
+      try{
+        const response = await fetch ('http://localhost:3000/feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        });
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw Error(data.error);
+        }
+console.log(data);
+      } catch (err) {
+        console.log(err.message);
+      }
+    };
 
 export default FeedbackList;

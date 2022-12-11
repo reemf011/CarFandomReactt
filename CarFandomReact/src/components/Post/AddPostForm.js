@@ -17,7 +17,7 @@ const AddProductForm = (props) => {
 
   const submitHandler = async (formData) => {
     try {
-      const response = await fetch('http://localhost:5000/Post', {
+      const response = await fetch('http://localhost:3000/Post', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

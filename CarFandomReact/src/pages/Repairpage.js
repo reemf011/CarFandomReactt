@@ -9,7 +9,7 @@ const Repairpage=()=> {
         const fetchSignal= fetchAbortController.signal();
         const fetchrepair = async () =>{
         try{
-            const response = await fetch ('http://localhost:5000/Repair',{
+            const response = await fetch ('http://localhost:3000/Repair',{
                 signal:fetchSignal
             });
             const data = await response.json();

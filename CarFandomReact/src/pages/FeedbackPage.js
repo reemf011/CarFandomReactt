@@ -16,7 +16,7 @@ const FeedbackPage = () => {
         const fetchFeecback = async () => {
             try {
 
-                const reponse = await fetch ('http://localhost:5000/customer', {
+                const reponse = await fetch ('http://localhost:3000/customer', {
                     signal: fetchSignal
                 });
 

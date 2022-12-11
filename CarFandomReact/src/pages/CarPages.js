@@ -13,7 +13,7 @@ const CarPages = () => {
         const fetchCar = async () => {
             try {
 
-                const reponse = await fetch ('http://localhost:5000/car', {
+                const reponse = await fetch ('http://localhost:3000/car', {
                     signal: fetchSignal
                 });
 

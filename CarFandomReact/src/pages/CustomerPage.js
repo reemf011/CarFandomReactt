@@ -11,7 +11,7 @@ const CustomerPage =()=>{
         const fetchSignal= fetchAbortController.signal();
         const fetchcustomer = async () => {
             try {
-                const response= await fetch ('http://localhost:5000/Customer',{
+                const response= await fetch ('http://localhost:3000/Customer',{
                     signal:fetchSignal
                 });
                 const data= await response.json();
