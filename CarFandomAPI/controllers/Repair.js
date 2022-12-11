@@ -2,7 +2,7 @@ const azMapsService = require('../services/asMaps');
 const Repairservice = require('../services/Repair');
 
 module.exports.postRepair = async (req, res) => {
-   const RepairInfo ={
+    const RepairInfo ={
     MName: req.body.MName,
     RDescription: req.body.RDescription,
     RLocation: req.body.RLocation
@@ -30,6 +30,7 @@ module.exports.postRepair = async (req, res) => {
         error: err.message
     });
     }
+    /*
     try {
         const repair = await RepairService.findAllProducts();
         res.send({repair});
@@ -39,6 +40,7 @@ module.exports.postRepair = async (req, res) => {
             error: err
         });
     }
+*/
 };
 
 

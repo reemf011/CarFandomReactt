@@ -5,7 +5,7 @@ module.exports.findAllProducts = async () => {
         const repair = await RepairModel.find();
         return repair;
     } catch (err) {
-        throw new Error ('Could not retrieve repairmechanics models');
+        throw new Error ('Could not retrieve repair centers models');
     }
 };
 
@@ -17,9 +17,9 @@ module.exports.addNewRepair = async (RepairInfo) => {
         RDescription:req.body.RDescription,
         RLocation:req.body.RLocation
         });
-        const createdRepair = await repair.save();
+        const createdRepair = await RepairModel.save();
         return createdRepair;
     } catch (err) {
-        throw new Error ('could not create Repair');
+        throw new Error ('could not create Repair Center');
     }
 };
