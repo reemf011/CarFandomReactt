@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-import AddPostForm from '../components/Post/AddPosttForm';
+import AddSupplierForm from '../components/suppliers/AddSupplierForm';
 
-const AddProductPage = () => {
+const AddSupplierPage = () => {
   const [Repair, setRepair] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +12,11 @@ const AddProductPage = () => {
 
     const fetchPost = async () => {
       try {
+<<<<<<< Updated upstream:CarFandomReact/src/pages/AddPostPage.js
         const response = await fetch('http://localhost:3000/Repair', {
+=======
+        const response = await fetch('http://localhost:3000/suppliers', {
+>>>>>>> Stashed changes:CarFandomReact/src/pages/AddSupplierPage.js
           signal: fetchSignal
         });
         const data = await response.json();
@@ -21,7 +25,7 @@ const AddProductPage = () => {
           throw Error(data.error);
         }
 
-        setSuppliers(data.Repair);
+        setSuppliers(data.suppliers);
         setIsLoading(false);
       } catch (err) {
         console.log(err.message);
@@ -36,14 +40,14 @@ const AddProductPage = () => {
   }, []);
 
   if (isLoading) {
-    return <p>Loading list of existing Repairs...</p>;
+    return <p>Loading list of existing suppliers...</p>;
   }
 
   return (
     <div>
-      <AddPostForm Repair={Repair} />
+      <AddcSuppliersForm suppliers={suppliers} />
     </div>
   );
 };
 
-export default AddPostPage;
+export default AddSupplierPage;

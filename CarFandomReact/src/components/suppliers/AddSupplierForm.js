@@ -6,18 +6,22 @@ import SelectInput from '../../UI/form/SelectInput';
 import TextAreaInput from '../../UI/form/TextAreaInput';
 import TextInput from '../../UI/form/TextInput';
 
-const AddProductForm = (props) => {
+const AddSupplierForm = (props) => {
   const { register, handleSubmit, formState } = useForm();
 
   const authContext = useContext(AuthContext);
 
   const suppliersOptions = props.suppliers.map((s) => {
-    return { postName: s.postName, value: s._id };
+    return { name: s.ame, value: s._id };
   });
 
   const submitHandler = async (formData) => {
     try {
+<<<<<<< Updated upstream:CarFandomReact/src/components/Post/AddPostForm.js
       const response = await fetch('http://localhost:3000/Post', {
+=======
+      const response = await fetch('http://localhost:3000/suppliers', {
+>>>>>>> Stashed changes:CarFandomReact/src/components/suppliers/AddSupplierForm.js
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,26 +59,16 @@ const AddProductForm = (props) => {
       )}
 
       <TextAreaInput
-        label="Description"
-        name="description"
+        label="Location"
+        name="location"
         register={register}
         validation={{ required: true }}
       />
-      {formState.errors.description && (
-        <FormInputError>Product description must not be empty</FormInputError>
+      {formState.errors.location && (
+        <FormInputError>Supplier location must not be empty</FormInputError>
       )}
 
-      <TextInput
-        label="Price"
-        type="number"
-        name="price"
-        register={register}
-        validation={{ required: true, min: 0 }}
-      />
-      {formState.errors.price && (
-        <FormInputError>Product price must be greater than 0.</FormInputError>
-      )}
-
+     
       <TextInput
         label="Image URL"
         type="text"
@@ -97,10 +91,10 @@ const AddProductForm = (props) => {
         type="submit"
         className="bg-white rounded-xl my-4 py-2 px-8 self-center"
       >
-        Add Product
+        Add Supplier
       </button>
     </form>
   );
 };
 
-export default AddPostForm;
+export default AddSupplierForm;

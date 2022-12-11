@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import ProductsList from '../components/products/ProductsList';
+import PostList from '../components/Post/PostList';
 
-const ProductsPage = () => {
-  // let's define a state for products
-  const [products, setProducts] = useState([]);
+const PostPage = () => {
+  // let's define a state for posts
+  const [Post, setPost] = useState([]);
 
   // let's define a state for loading
   const [isLoading, setIsLoading] = useState(true);
@@ -12,10 +12,14 @@ const ProductsPage = () => {
     const fetchAbortController = new AbortController();
     const fetchSignal = fetchAbortController.signal;
 
-    const fetchProducts = async () => {
+    const fetchPost = async () => {
       try {
         // send an HTTP GET request to the get products route we defined in our Express REST API
+<<<<<<< Updated upstream:CarFandomReact/src/pages/ProductsPage.js
         const response = await fetch('http://localhost:3000/products', {
+=======
+        const response = await fetch('http://localhost:3000/Post', {
+>>>>>>> Stashed changes:CarFandomReact/src/pages/PostPage.js
           signal: fetchSignal
         });
         // parse the response content to JSON and store it into data variable
@@ -28,7 +32,7 @@ const ProductsPage = () => {
         }
 
         // we now need to set our component state to the products we fetched
-        setProducts(data.products);
+        setProducts(data.Post);
 
         // after we set the products' state, let's set the loading state to false
         setIsLoading(false);
